@@ -5,6 +5,7 @@ import '@/styles/globals.css'
 import { Montserrat } from 'next/font/google'
 import Head from './head'
 const montserrat = Montserrat({ subsets: ['latin'] })
+import {Toaster} from '@/components/ui/CustomToast'
 
 export default function RootLayout({
   children,
@@ -19,6 +20,7 @@ export default function RootLayout({
       <Head />
       <body className='min-h-screen bg-slate-50 dark:bg-slate-900 antialiased'>
         <Providers>
+          <Toaster position='bottom-right' />
           {/* @ts-expect-error Server Component */}
           <Navbar />
         </Providers>

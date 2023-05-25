@@ -13,7 +13,7 @@ interface CustomToastProps extends React.HTMLAttributes<HTMLDivElement> {
 export const CustomToast = ({ visible, className, ...props }: CustomToastProps) => {
     return (
         <div className={cn(
-            'min-h-16 mb-2 flex w-[350px] flex-col items-start gap-1 rounded-mdd bg-white px-6 py-4 shadow-lg',
+            'min-h-16 mb-2 flex w-[350px] flex-col items-start gap-1 rounded-md bg-white px-6 py-4 shadow-lg',
             visible && 'animate-in slide-in-from-buttom-5',
             className)}
             {...props}>
@@ -66,9 +66,12 @@ export function toast(opts: ToastOpts) {
 
     return hotToast.custom(
         ({ visible }) => (
-            <CustomToast visible={visible}>
-                <CustomToast.Title></CustomToast.Title>
-                {message && <CustomToast.Message></CustomToast.Message>}
+            <CustomToast visible={visible} 
+            className={
+                cn({ 'bg-red-600 text-white': type === 'error', 'bg-black text-white': type === 'success' })
+            }>
+                <CustomToast.Title>{title}</CustomToast.Title>
+                {message && <CustomToast.Message>{message}</CustomToast.Message>}
             </CustomToast>
         ),
         { duration }

@@ -1,7 +1,7 @@
 'use client'
 import React, { FC, useState } from 'react'
 import Button from '@/ui/Button'
-import toast from 'react-hot-toast'
+import { toast } from './ui/CustomToast'
 import {signIn} from "next-auth/react"
 
 interface SignInButtonProps { }
@@ -15,11 +15,11 @@ const SignInButton: FC<SignInButtonProps> = ({ }) => {
        try{
         await signIn('google')
        }catch(error){
-        // toast.error({
-        //     title: 'Error signing in',
-        //     message: 'Please try again',
-        //     type: 'error'
-        // })
+        toast({
+            title: 'Error signing in',
+            message: 'Please try again',
+            type: 'error'
+        })
        }
     }
     return <Button onClick={signInwithGoogle} isLoading={isLoading}>

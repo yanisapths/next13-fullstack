@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import LargeHeading from "@/ui/LargeHeading"
 import type { Metadata } from 'next'
 import Paragraph from '@/components/ui/Paragraph'
-import DocumentationTabs from '@/components/ui/DocumentationTabs'
+import DocumentationTabs from '@/components/DocumentationTabs'
 
 export const metadata: Metadata = {
     title: 'Similar API Excercise | Documentation',

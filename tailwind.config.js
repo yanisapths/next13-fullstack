@@ -23,8 +23,11 @@ module.exports = {
       },
       colors: {
         ...colors,
+        'light-blue': '#74B9BD',
+        'dark-blue': '#111F50',
         'light-gold': '#f5bc51',
-        'dark-gold': '#533519'
+        'dark-gold': '#533519',
+        'darker-blue': '#020327'
       },
     },
   },

@@ -17,12 +17,13 @@ export default function RootLayout({
       cn('bg-white text-slate-900 antialiased',
         montserrat.className
       )}>
-      <Head />
-      <body className='min-h-screen bg-slate-50 dark:bg-slate-900 antialiased'>
+      {/* <Head /> */}
+      <body className='min-h-screen bg-white dark:bg-darker-blue antialiased'>
         <Providers>
           <Toaster position='bottom-right' />
           {/* @ts-expect-error Server Component */}
           <Navbar />
+          <main>{children}</main>
         </Providers>
         {/* Allow for more height on mobile devices */}
         <div className='h-40 md:hidden' />

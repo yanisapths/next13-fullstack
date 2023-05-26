@@ -5,9 +5,10 @@ import { buttonVariants } from '@/ui/Button'
 import SignInButton from "./SignInButton"
 import SignOutButton from './SignOutButton'
 import ThemeToggle from './ThemeToggle'
+import { authOptions } from '@/lib/auth'
 
 const Navbar = async () => {
-    const session = await getServerSession()
+    const session = await getServerSession(authOptions)
     return (
         <nav className='fixed z-50 inset-x-0 top-0 h-20 border-b border-slate-300 dark:border-slate-700 backdrop-blur-sm bg-white/75 dark:bg-darker-blue shadow-sm flex item-center justify-between'>
             <div className='container max-w-7xl mx-auto w-full flex justify-between items-center'>

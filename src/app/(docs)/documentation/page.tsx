@@ -3,6 +3,7 @@ import LargeHeading from "@/ui/LargeHeading"
 import type { Metadata } from 'next'
 import Paragraph from '@/components/ui/Paragraph'
 import DocumentationTabs from '@/components/DocumentationTabs'
+import 'simplebar-react/dist/simplebar.min.css'
 
 export const metadata: Metadata = {
     title: 'Similar API Excercise | Documentation',

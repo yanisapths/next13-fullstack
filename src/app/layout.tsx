@@ -18,7 +18,7 @@ export default function RootLayout({
         montserrat.className
       )}>
       {/* <Head /> */}
-      <body className='min-h-screen bg-white dark:bg-darker-blue antialiased'>
+      <body className='min-h-screen bg-slate-50 dark:bg-darker-blue antialiased'>
         <Providers>
           <Toaster position='bottom-right' />
           {/* @ts-expect-error Server Component */}

@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Paragraph from '@/components/ui/Paragraph'
 import LargeHeading from '@/components/ui/LargeHeading'
-
 import type { Metadata } from 'next'
 import Link from 'next/link'
 

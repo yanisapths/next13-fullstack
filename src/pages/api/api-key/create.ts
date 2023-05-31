@@ -1,7 +1,7 @@
 import { authOptions } from '@/lib/auth';
 import { NextApiRequest, NextApiResponse } from 'next';
 import { getServerSession } from 'next-auth';
-import { CreateApiData } from '../../../../types/api';
+import { CreateApiData } from '@/types/api';
 import {db} from '@/lib/db';
 import { z } from 'zod'
 import { nanoid } from 'nanoid'

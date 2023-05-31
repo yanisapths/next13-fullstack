@@ -9,6 +9,7 @@ import LargeHeading from './ui/LargeHeading';
 import Paragraph from './ui/Paragraph';
 import { Input } from './ui/Input';
 import Table from './Table';
+import ApiKeyOptions from '../components/ApiKeyOptions';
 
 export const metadata: Metadata = {
   title: 'API Dashboard'
@@ -43,14 +44,15 @@ const ApiDashboard = async ({ }) => {
         <LargeHeading>Welcome back, {user.user.name}</LargeHeading>
         <div className='py-4 md:flex md:justify-start md:text-left align-middle items-center gap-4'>
           <Paragraph>Your API Key:</Paragraph>
-          <div className='flex justify-center items-center'>
-          <Input className='w-fit px-2 truncate' readOnly placeholder={activateApiKey.key} />
+          <div className='flex justify-center items-center gap-2'>
+            <Input className='w-fit px-2 truncate' readOnly placeholder={activateApiKey.key} />
+            <ApiKeyOptions activateApiKeyId={activateApiKey.id} activateApiKeyKey={activateApiKey.key} />
           </div>
         </div>
-      <div className='flex py-2 md:justify-start md:text-left justify-center items-center text-center '>
-      <Paragraph>Your API history:</Paragraph>
-      </div>
-      <Table userRequests={serializabledRequests} />
+        <div className='flex py-2 md:justify-start md:text-left justify-center items-center text-center '>
+          <Paragraph>Your API history:</Paragraph>
+        </div>
+        <Table userRequests={serializabledRequests} />
       </div>
     </div>
   )

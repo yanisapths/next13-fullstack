@@ -43,7 +43,7 @@ const RequestApiKey: FC<RequestApiKeyProps> = ({ }) => {
   }
 
   return (
-    <div className='container md:max-w-2xl flex flex-col gap-6 items-center justify-center'>
+    <div className='container flex flex-col gap-6 items-center justify-center'>
       <Icons.Key className='mx-auto h-12 w-12 text-gray-400' />
       <LargeHeading className='text-center'>
         Request your API key

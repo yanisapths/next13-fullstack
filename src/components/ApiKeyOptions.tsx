@@ -10,11 +10,11 @@ import { revokeApiKey } from '@/helpers/revoke-api-key'
 import { useRouter } from 'next/navigation'
 
 interface ApiKeyOptionsProps {
-    activateApiKeyId: string,
-    activateApiKeyKey: string,
+    apiKeyId: string,
+    apiKeyKey: string,
 }
 
-const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ activateApiKeyId, activateApiKeyKey }) => {
+const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ apiKeyId, apiKeyKey }) => {
     const [isCreatingNew, setIsCreatingNew] = useState<boolean>(false)
     const [isRevoking, setIsRevoking] = useState<boolean>(false)
     const router = useRouter()
@@ -36,7 +36,7 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ activateApiKeyId, activateApiKe
     const revokeCurrentApiKey = async () => {
         setIsRevoking(true)
         try {
-            await revokeApiKey({ keyId: activateApiKeyId })
+            await revokeApiKey({ keyId:apiKeyId })
             router.refresh()
         } catch (error) {
             toast({
@@ -65,7 +65,7 @@ const ApiKeyOptions: FC<ApiKeyOptionsProps> = ({ activateApiKeyId, activateApiKe
             </DropdownMenuTrigger>
             <DropdownMenuContent>
                 <DropdownMenuItem onClick={() => {
-                    navigator.clipboard.writeText(activateApiKeyKey)
+                    navigator.clipboard.writeText(apiKeyKey)
                     toast({
                         title: 'Copied!',
                         message: 'API Key copied to clipboard',

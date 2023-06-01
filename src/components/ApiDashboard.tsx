@@ -8,8 +8,9 @@ import { formatDistance } from 'date-fns'
 import LargeHeading from './ui/LargeHeading';
 import Paragraph from './ui/Paragraph';
 import { Input } from './ui/Input';
-import Table from './Table';
+
 import ApiKeyOptions from '../components/ApiKeyOptions';
+import Table from './ui/Table';
 
 export const metadata: Metadata = {
   title: 'API Dashboard'
@@ -34,7 +35,6 @@ const ApiDashboard = async ({ }) => {
   })
 
   const serializabledRequests = userRequests.map((request) => ({
-
     ...request,
     timestamp: formatDistance(new Date(request.timestamp), new Date()),
   }))
@@ -46,7 +46,7 @@ const ApiDashboard = async ({ }) => {
           <Paragraph>Your API Key:</Paragraph>
           <div className='flex justify-center items-center gap-2'>
             <Input className='w-fit px-2 truncate' readOnly placeholder={activateApiKey.key} />
-            <ApiKeyOptions activateApiKeyId={activateApiKey.id} activateApiKeyKey={activateApiKey.key} />
+            <ApiKeyOptions apiKeyId={activateApiKey.id} apiKeyKey={activateApiKey.key} />
           </div>
         </div>
         <div className='flex py-2 md:justify-start md:text-left justify-center items-center text-center '>

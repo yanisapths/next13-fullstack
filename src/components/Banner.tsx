@@ -48,11 +48,12 @@ const Banner = () => {
     reorderedItems.splice(targetIndex, 0, draggedItem);
     setItems(reorderedItems);
     setIsSaveEnabled(true);
+    setFilterItem(reorderedItems);
   };
+
   const handleSave = () => {
     // Save the items in their new ordering
     setIsSaveEnabled(false);
-    setFilterItem(reorderedItems);
   };
 
   return (
